@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashford Explore Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: black; color: white; margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        .card-perspective { perspective: 1000px; }
+        .custom-card { background: rgba(24, 24, 27, 0.7); border: 1px solid rgba(59, 130, 246, 0.2); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; }
+        .glow-blue { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
+        .group:hover .glow-text-emerald { filter: drop-shadow(0 0 14px rgba(52, 211, 153, 0.9)); }
+        .btn-glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        .footer-animate { animation: slideUp 0.8s ease-out 0.5s forwards; opacity: 0; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-between px-6 py-20">
+        <div class="text-center max-w-3xl mb-16">
+            <p class="tracking-widest text-blue-400 mb-3 uppercase text-sm">THE ASHFORD ADVANTAGE</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">This Isn’t a Course. <span class="text-blue-500">It’s Execution Training.</span></h1>
+            <p class="text-gray-400 text-lg">If you’re tired of knowing concepts but failing in real trades, this mentorship is designed to fix exactly that.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-6xl card-perspective">
+            <div class="motion-card">
+                <div class="custom-card p-8 flex flex-col items-center text-center rounded-2xl shadow-xl shadow-blue-500/10 group h-full">
+                    <div class="icon-wrapper mb-6 transition-transform duration-[0.8s]"><i data-lucide="brain" class="h-14 w-14 text-blue-500 glow-blue"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-400 transition-all duration-300 glow-text-emerald">Clarity Over Chaos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">You stop guessing. We strip market noise and give you one execution framework so you finally know *what to do* every single day.</p>
+                </div>
+            </div>
+            <div class="motion-card">
+                <div class="custom-card p-8 flex flex-col items-center text-center rounded-2xl shadow-xl shadow-blue-500/10 group h-full">
+                    <div class="icon-wrapper mb-6 transition-transform duration-[0.8s]"><i data-lucide="zap" class="h-14 w-14 text-blue-500 glow-blue"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-400 transition-all duration-300 glow-text-emerald">Executional Growth</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">No theory overload. You practice live decision-making so hesitation, fear, and overthinking naturally disappear.</p>
+                </div>
+            </div>
+            <div class="motion-card">
+                <div class="custom-card p-8 flex flex-col items-center text-center rounded-2xl shadow-xl shadow-blue-500/10 group h-full">
+                    <div class="icon-wrapper mb-6 transition-transform duration-[0.8s]"><i data-lucide="target" class="h-14 w-14 text-blue-500 glow-blue"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-400 transition-all duration-300 glow-text-emerald">Precision Entries & Exits</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">You’ll know exactly where you’re wrong and where you’re right. No vague predictions, only structured risk and intent.</p>
+                </div>
+            </div>
+            <div class="motion-card">
+                <div class="custom-card p-8 flex flex-col items-center text-center rounded-2xl shadow-xl shadow-blue-500/10 group h-full">
+                    <div class="icon-wrapper mb-6 transition-transform duration-[0.8s]"><i data-lucide="repeat" class="h-14 w-14 text-blue-500 glow-blue"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-emerald-400 transition-all duration-300 glow-text-emerald">Practice > Perfection</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Consistency beats motivation. We build repeatable habits so your results don’t depend on mood or luck.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 flex flex-col items-center footer-animate">
+            <a href="payment.html" class="px-10 py-6 text-lg font-bold rounded-2xl bg-blue-500 hover:bg-blue-600 transition-all duration-300 btn-glow active:scale-95 text-white no-underline">Pay & Join</a>
+            <p class="text-gray-500 text-sm mt-4 text-center">One decision away from trading with confidence instead of confusion.</p>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+        const cards = document.querySelectorAll('.motion-card');
+        cards.forEach(card => {
+            const innerCard = card.querySelector('.custom-card');
+            const icon = card.querySelector('.icon-wrapper');
+            card.addEventListener('mouseenter', () => {
+                innerCard.style.transform = "rotateY(15deg) rotateX(-10deg) scale(1.05)";
+                icon.style.transform = "rotate(360deg)";
+            });
+            card.addEventListener('mouseleave', () => {
+                innerCard.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
+                icon.style.transform = "rotate(0deg)";
+            });
+        });
+    </script>
+</body>
+</html>

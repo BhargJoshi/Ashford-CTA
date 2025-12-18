@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashford Capital – Secure Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #000; color: #fff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+    .container { width: 100%; max-width: 520px; text-align: center; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3rem); font-weight: 800; letter-spacing: 2px; margin-bottom: 40px; }
+    h1 span { color: #3b82f6; }
+    .qr-card { background: rgba(24,24,27,0.85); border-radius: 28px; padding: 36px 32px 42px; border: 1px solid rgba(59,130,246,0.3); box-shadow: 0 0 80px rgba(59,130,246,0.12); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .qr-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 0 120px rgba(59,130,246,0.25); }
+    .qr-wrapper { background: #fff; border-radius: 18px; padding: 18px; display: inline-block; margin-bottom: 22px; }
+    .qr-wrapper img { width: 260px; max-width: 100%; display: block; }
+    .upi-text { margin-top: 14px; font-size: 14px; color: #a1a1aa; }
+    .btn { margin-top: 34px; background: #3b82f6; color: #fff; padding: 16px 36px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: not-allowed; border: none; opacity: 0.5; box-shadow: 0 0 30px rgba(59,130,246,0.55); transition: all 0.35s ease; }
+    .btn.active { cursor: pointer; opacity: 1; }
+    .btn.active:hover { transform: scale(1.06); box-shadow: 0 0 50px rgba(59,130,246,0.85); }
+    .note { margin-top: 18px; font-size: 13px; line-height: 1.6; color: #9ca3af; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .note span { color: #60a5fa; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ASHFORD <span>CAPITAL</span></h1>
+    <div class="qr-card">
+      <div class="qr-wrapper">
+        <img src="GooglePay_QR.png" alt="UPI QR Code">
+      </div>
+      <div class="upi-text">Scan to pay using any UPI app</div>
+      <button class="btn" id="joinBtn">Join WhatsApp Now</button>
+      <div class="note">Once your payment is <span>successfully transferred</span>, the WhatsApp group joining button will automatically activate.</div>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => {
+      const btn = document.getElementById('joinBtn');
+      btn.classList.add('active');
+      btn.disabled = false;
+      btn.style.cursor = 'pointer';
+      btn.addEventListener('click', () => {
+        window.location.href = 'https://chat.whatsapp.com/GfxPLzioMttJbROSb1RbUU';
+      });
+    }, 6000);
+  </script>
+</body>
+</html>
